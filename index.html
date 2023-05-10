@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function add7(myNumber) {
+            return myNumber + 7;
+        }
+
+        function multiply(myFirstNumber, mySecondNumber) {
+            return myFirstNumber * mySecondNumber;
+        }
+
+        function capitalize(myString) {
+            let firstLetter = myString.substr(0,1).toUpperCase();
+            let nextLetters = myString.slice(1).toLowerCase();
+            return firstLetter + nextLetters;
+        }
+
+        function lastLetter(myString) {
+            return myString.substr(myString.length-1,1);
+        }
+
+        
+
+        console.log(add7(14));
+        console.log(multiply(4,5));
+        console.log(capitalize('GRAVY'));
+        console.log(capitalize('gravy'));
+        console.log(capitalize('gRAvy'));
+        console.log(lastLetter('Friday'));
+        console.log(lastLetter('FRIDAY'));
+
+    </script>
+</body>
+</html>
