@@ -8,33 +8,45 @@
 </head>
 <body>
     <script>
-        function add7(myNumber) {
-            return myNumber + 7;
-        }
+        //enter number
+        //print each number from 1 to x
+        //print mod 3 = 0 as "fizz"
+        //print mod 5 = 0 as "buzz"
 
-        function multiply(myFirstNumber, mySecondNumber) {
-            return myFirstNumber * mySecondNumber;
-        }
+        let myNumber = prompt("Enter a number:",0);
 
-        function capitalize(myString) {
-            let firstLetter = myString.substr(0,1).toUpperCase();
-            let nextLetters = myString.slice(1).toLowerCase();
-            return firstLetter + nextLetters;
-        }
+        let printString = "";
 
-        function lastLetter(myString) {
-            return myString.substr(myString.length-1,1);
+        for (let i=1; i <= myNumber; i++) {
+            printString = printString.concat(printFizzBuzz(i), ", ");
         }
-
         
+        function isFizz(currentNum) {
+            return currentNum % 3 === 0? true: false;     
+        }
 
-        console.log(add7(14));
-        console.log(multiply(4,5));
-        console.log(capitalize('GRAVY'));
-        console.log(capitalize('gravy'));
-        console.log(capitalize('gRAvy'));
-        console.log(lastLetter('Friday'));
-        console.log(lastLetter('FRIDAY'));
+        function isBuzz(currentNum) {
+            return currentNum % 5 === 0? true: false;    
+        }
+
+        function printFizzBuzz(currentNum) {
+            switch (true) {
+                case isFizz(currentNum) && isBuzz(currentNum): 
+                    return 'FizzBuzz';
+                    break;
+                case isFizz(currentNum) && !isBuzz(currentNum): 
+                    return 'Fizz';
+                    break;
+                case !isFizz(currentNum) && isBuzz(currentNum): 
+                    return 'Buzz';
+                    break;
+                default:
+                    return currentNum;
+            }
+
+        }
+
+        console.log(printString.substr(0,printString.length-2));
 
     </script>
 </body>
