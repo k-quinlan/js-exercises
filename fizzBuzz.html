@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //enter number
+        //print each number from 1 to x
+        //print mod 3 = 0 as "fizz"
+        //print mod 5 = 0 as "buzz"
+
+        let myNumber = prompt("Enter a number:",0);
+
+        let printString = "";
+
+        for (let i=1; i <= myNumber; i++) {
+            printString = printString.concat(printFizzBuzz(i), ", ");
+        }
+        
+        function isFizz(currentNum) {
+            return currentNum % 3 === 0? true: false;     
+        }
+
+        function isBuzz(currentNum) {
+            return currentNum % 5 === 0? true: false;    
+        }
+
+        function printFizzBuzz(currentNum) {
+            switch (true) {
+                case isFizz(currentNum) && isBuzz(currentNum): 
+                    return 'FizzBuzz';
+                    break;
+                case isFizz(currentNum) && !isBuzz(currentNum): 
+                    return 'Fizz';
+                    break;
+                case !isFizz(currentNum) && isBuzz(currentNum): 
+                    return 'Buzz';
+                    break;
+                default:
+                    return currentNum;
+            }
+
+        }
+
+        console.log(printString.substr(0,printString.length-2));
+
+    </script>
+</body>
+</html>
